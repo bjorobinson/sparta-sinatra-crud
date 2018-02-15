@@ -23,35 +23,37 @@ class SongController < Sinatra::Base
       id: 2,
       title: "Domestic Pressures",
       body: "From Theory of Everything OST"
-    }]
+  }]
 
-    # root
-    get '/' do
-      "Root"
-    end
-
-    # new
-    get '/new' do
-      "New"
-    end
-
-    # show
-    get '/:id' do
-      "Show"
-    end
-
-    # create
-    put '/:id' do
-      "Create"
-    end
-
-    # delete
-    delete '/:id' do
-      "Delete"
-    end
-
-    # edit
-    get '/:id/edit' do
-      "edit"
-    end
+  # index
+  get '/songs' do
+    @songs = $songs
+    @title = "Songs index"
+    erb :'songs/index'
   end
+
+  # new
+  get '/songs/new' do
+    "New"
+  end
+
+  # show
+  get '/songs/:id' do
+    "Show"
+  end
+
+  # create
+  put '/songs/:id' do
+    "Create"
+  end
+
+  # delete
+  delete '/songs/:id' do
+    "Delete"
+  end
+
+  # edit
+  get '/songs/:id/edit' do
+    "edit"
+  end
+end
