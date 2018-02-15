@@ -34,7 +34,7 @@ class SongController < Sinatra::Base
 
   # new
   get '/songs/new' do
-
+    erb :'songs/new'
   end
 
   # show
