@@ -8,5 +8,6 @@ use Rack::MethodOverride
 
 run Rack::Cascade.new([
   RemixController,
-  SongController
+  SongController,
+  StaticController
 ])
