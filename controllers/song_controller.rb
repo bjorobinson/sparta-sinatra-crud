@@ -32,9 +32,25 @@ class SongController < Sinatra::Base
     erb :'songs/index'
   end
 
+
   # new
   get '/songs/new' do
     erb :'songs/new'
+  end
+
+  # create
+
+  post '/songs' do
+    puts params
+
+    new_song = {
+      title: params[:title],
+      body: params[:body]
+    }
+
+    $songs.push new_song
+
+    redirect "/songs"
   end
 
   # show
@@ -44,11 +60,6 @@ class SongController < Sinatra::Base
     erb :'songs/show'
   end
 
-  # create
-  put '/songs/:id' do
-    "Create"
-  end
-
   # delete
   delete '/songs/:id' do
     "Delete"
@@ -56,6 +67,22 @@ class SongController < Sinatra::Base
 
   # edit
   get '/songs/:id/edit' do
-    "edit"
+    id = params[:id].to_i
+    @song = $songs[id]
+    erb :'songs/edit'
+  end
+
+  # update
+  put '/songs/:id'  do
+
+    id = params[:id].to_i
+    song = $songs[id]
+    song[:title] = params[:title]
+    song[:body] = params[:body]
+
+    $songs[id] = song
+
+    redirect '/songs'
+
   end
 end
