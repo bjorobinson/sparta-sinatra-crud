@@ -62,7 +62,9 @@ class SongController < Sinatra::Base
 
   # delete
   delete '/songs/:id' do
-    "Delete"
+    id = params[:id].to_i
+    $songs.delete_at(id)
+    redirect '/songs'
   end
 
   # edit

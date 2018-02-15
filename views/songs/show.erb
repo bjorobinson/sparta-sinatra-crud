@@ -7,6 +7,10 @@
 <div class="">
   <a href="/songs/<%= @song[:id] %>/edit">Edit Song</a>
 </div>
+<form class="" action="/songs/<%= @song[:id] %>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="" value="Delete">
+</form>
 <div class="">
   <p>Remix info pending</p>
 </div>
