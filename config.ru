@@ -6,4 +6,4 @@ require_relative './controllers/type_controller.rb'
 
 use Rack::MethodOverride
 
-run PostsController
+run SongController
