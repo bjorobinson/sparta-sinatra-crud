@@ -34,12 +34,14 @@ class SongController < Sinatra::Base
 
   # new
   get '/songs/new' do
-    "New"
+
   end
 
   # show
   get '/songs/:id' do
-    "Show"
+    id = params[:id].to_i
+    @song = $songs[id]
+    erb :'songs/show'
   end
 
   # create
