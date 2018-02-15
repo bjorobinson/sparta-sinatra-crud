@@ -1,0 +1,17 @@
+<div class="">
+  <h1><%= @remix[:title] %></h1>
+</div>
+<div class="">
+  <!-- <p><%= @remix[:body] %></p> -->
+  <a href="<%= @remix[:body] %>">Youtube Link</a>
+</div>
+<div class="">
+  <a href="/remixes/<%= @remix[:id] %>/edit">Edit Remix</a>
+</div>
+<form class="" action="/remixes/<%= @remix[:id] %>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="" value="Delete">
+</form>
+<div class="">
+  <p>Song info pending</p>
+</div>

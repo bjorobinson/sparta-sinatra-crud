@@ -6,4 +6,7 @@ require_relative './controllers/remix_controller.rb'
 
 use Rack::MethodOverride
 
-run SongController
+run Rack::Cascade.new([
+  RemixController,
+  SongController
+])
