@@ -1,0 +1,6 @@
+<h1>Remix Index</h1>
+<% @remixes.each do |remix| %>
+  <div class="">
+    <a href="/remixes/<%= remix[:id] %>"><%= remix[:title] %></a>
+  </div>
+<% end %>
